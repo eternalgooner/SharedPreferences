@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/gl"
+    tools:context="david.com.savedpreferences.MainActivity"
+    android:columnCount="2"
+    android:rowCount="5">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="shared preferences working:"
+        android:layout_gravity="right"
+        android:padding="24dp"
+        android:textSize="20sp"
+        android:id="@+id/row_1"
+        android:layout_columnWeight=".5"
+        android:layout_rowWeight="1"
+       />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_gravity="left"
+        android:padding="24dp"
+        android:textSize="20sp"
+        android:id="@+id/column_1"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="auto-save feature:"
+        android:id="@+id/row_2"
+        android:layout_gravity="right"
+        android:padding="24dp"
+        android:textSize="20sp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+       />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:id="@+id/column_2"
+        android:layout_gravity="left"
+        android:padding="24dp"
+        android:textSize="20sp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+      />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="fav colour:"
+        android:id="@+id/row_3"
+        android:layout_gravity="right"
+        android:padding="24dp"
+        android:textSize="20sp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+       />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:layout_gravity="left"
+        android:padding="24dp"
+        android:textSize="20sp"
+        android:id="@+id/column_3"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+       />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="keep favourites:"
+        android:id="@+id/row_4"
+        android:layout_gravity="right"
+        android:padding="24dp"
+        android:textSize="20sp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:layout_gravity="left"
+        android:padding="24dp"
+        android:textSize="20sp"
+        android:id="@+id/column_4"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+       />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="preferred text size:"
+        android:id="@+id/row_5"
+        android:layout_gravity="right"
+        android:padding="24dp"
+        android:textSize="20sp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+       />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:id="@+id/column_5"
+        android:layout_gravity="left"
+        android:padding="24dp"
+        android:textSize="20sp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+       />
+
+</GridLayout>
