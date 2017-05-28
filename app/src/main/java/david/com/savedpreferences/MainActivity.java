@@ -17,8 +17,8 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     TextView column_1;
     TextView column_2;
     TextView column_3;
-    TextView column_4;
-    TextView column_5;
+    //TextView column_4;
+    //TextView column_5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,23 +28,32 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         column_1 = (TextView) findViewById(R.id.column_1);
         column_2 = (TextView) findViewById(R.id.column_2);
         column_3 = (TextView) findViewById(R.id.column_3);
-        column_4 = (TextView) findViewById(R.id.column_4);
-        column_5 = (TextView) findViewById(R.id.column_5);
+        //column_4 = (TextView) findViewById(R.id.column_4);
+        //column_5 = (TextView) findViewById(R.id.column_5);
         setupSharedPreferences();
     }
 
     private void setupSharedPreferences() {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         String storeColour = sp.getString(getString(R.string.pref_colour_key), "#FFFFFF");
-        boolean pref_working = sp.getBoolean("pref_working_key", true);
+        boolean pref_working = sp.getBoolean("pref_working_key", false);
+        boolean autoSaveOn = sp.getBoolean("auto_save_key", false);
 
         gl.setBackgroundColor(Color.parseColor(storeColour));
 
         if(pref_working){
-            column_1.setText(pref_working + "");
+            column_1.setText(R.string.pref_on);
         }else{
-            column_1.setText(!pref_working + "");
+            column_1.setText(R.string.pref_off);
         }
+
+        if(autoSaveOn){
+            column_2.setText("Enabled");
+        }else{
+            column_2.setText("Disabled");
+        }
+
+        column_3.setText(storeColour);
 
         sp.registerOnSharedPreferenceChangeListener(this);
     }
@@ -82,8 +91,21 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         if(key.equals(getString(R.string.pref_colour_key))){
             String storeColour = sharedPreferences.getString(key, "#FFFFFF");
             gl.setBackgroundColor(Color.parseColor(storeColour));
-        }else if(key.equals(R.string.pref_working_key)){
-            column_1.setText(sharedPreferences.getBoolean(key, true) +"");
+            column_3.setText(storeColour);
+        }else if(key.equals("pref_working_key")){
+            boolean prefIsWorking = sharedPreferences.getBoolean(key, false);
+            if(prefIsWorking){
+                column_1.setText(R.string.pref_on);
+            }else{
+                column_1.setText(R.string.pref_off);
+            }
+        }else if(key.equals("auto_save_key")) {
+            boolean autoSaveOn = sharedPreferences.getBoolean(key, false);
+            if (autoSaveOn) {
+                column_2.setText(R.string.auto_save_on);
+            } else {
+                column_2.setText(R.string.auto_save_off);
+            }
         }
     }
 }

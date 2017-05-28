@@ -9,5 +9,9 @@
     <string name="pref_colour_yellow">#e9de49</string>
 
     <string name="pref_working_key">pref_working_key</string>
+    <string name="pref_on">YES</string>
+    <string name="pref_off">NO</string>
+    <string name="auto_save_on">Enabled</string>
+    <string name="auto_save_off">Disabled</string>
 
 </resources>
